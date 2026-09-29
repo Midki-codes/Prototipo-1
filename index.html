@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' https://static.balsamiq.com/prototype/v1/; style-src 'unsafe-inline' https://static.balsamiq.com/prototype/v1/; font-src https://static.balsamiq.com/prototype/v1/; img-src data: https:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none';"/>
+    <title>Cirugía Especial Medical Services</title>
+
+    <!-- Fonts -->
+    <link href="https://static.balsamiq.com/prototype/v1/css/noto-fonts.css" rel="stylesheet"/>
+    <link href="https://static.balsamiq.com/prototype/v1/css/material-symbols-outlined.css" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://static.balsamiq.com/prototype/v1/js/tailwindcss-3.4.17.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b78e4",
+                        "secondary": "#046b99",
+                        "background": "#ffffff",
+                        "surface": "#eeeeee",
+                        "border": "#999999",
+                        "text-main": "#333333",
+                        "text-muted": "#666666",
+                    },
+                    borderRadius: {
+                        "theme": "0.25rem",
+                        "theme-sm": "calc(0.25rem * 0.5)",
+                        "theme-lg": "calc(0.25rem * 1.5)",
+                    },
+                    boxShadow: {
+                        "theme": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Alpine.js Plugins -->
+    <script defer src="https://static.balsamiq.com/prototype/v1/js/alpinejs-collapse-3.14.9.min.js"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://static.balsamiq.com/prototype/v1/js/alpinejs-3.14.9.min.js"></script>
+
+    <style>
+        /* Prevent flash of unstyled content */
+        [x-cloak] { display: none !important; }
+        .font-display { font-family: 'Noto Serif', serif; }
+        .font-body { font-family: 'Noto Sans', sans-serif; }
+    </style>
+
+</head>
+<body class="bg-background text-text-main font-body antialiased min-h-screen"
+      x-data="{ page: 'main', formData: {} }">
+
+<!-- Page: Main -->
+<div x-show="page === 'main'" class="min-h-screen bg-background text-text-main font-sans">
+    
+    <!-- Top Bar -->
+    <div data-control-id="1" class="bg-gray-100 py-2 px-4 flex justify-between items-center border-b border-border">
+        <div data-control-id="2-7" class="flex items-center gap-2 text-primary text-sm">
+            <span class="material-symbols-outlined text-base">phone_in_talk</span>
+            <span>5555-555-555</span>
+            <span class="mx-2">|</span>
+            <span>lun-vie: 9 am - 7 pm</span>
+            <span class="material-symbols-outlined text-base">expand_content</span>
+        </div>
+        <button data-control-id="2-8" @click="page = 'portal'" class="bg-black text-white px-4 py-1 rounded-theme text-xs hover:opacity-80 transition-opacity">
+            Portal del paciente
+        </button>
+    </div>
+
+    <!-- Navigation Header -->
+    <header data-control-id="4" class="bg-surface shadow-theme sticky top-0 z-40 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <span data-control-id="7" class="material-symbols-outlined text-primary">medical_services</span>
+            <h1 data-control-id="8" class="text-xl font-bold">Cirugía especial</h1>
+        </div>
+        
+        <nav data-control-id="5" class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a class="hover:text-primary transition-colors">¿Quienes somos?</a>
+            <a class="hover:text-primary transition-colors">Procesos quirúrgicos</a>
+            <a class="hover:text-primary transition-colors">Servicios</a>
+        </nav>
+
+        <button data-control-id="9" @click="page = 'appointment'" class="bg-primary text-white px-4 py-2 rounded-theme shadow-theme hover:opacity-90 transition-all">
+            Agenda tu cita
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1 space-y-4">
+            <h2 data-control-id="12" class="text-primary font-semibold uppercase tracking-wide text-sm">Cirugía Especial</h2>
+            <p data-control-id="15" class="text-text-muted text-lg leading-relaxed">
+                En cirugía especial tendrás acceso a tratamiento personalizado y de primer nivel. Tenemos cirugía XXXXX, tratamiento XXXX, terapia XXXX.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <button data-control-id="17" @click="page = 'appointment'" class="bg-primary text-white px-6 py-2 rounded-theme shadow-theme hover:opacity-90 transition-all">
+                    Agenda cita
+                </button>
+                <button data-control-id="16" class="border border-border px-6 py-2 rounded-theme flex items-center gap-2 hover:bg-gray-50 transition-colors">
+                    <span data-control-id="18" class="material-symbols-outlined text-sm">phone_in_talk</span>
+                    5555-5555
+                </button>
+            </div>
+        </div>
+        <div data-control-id="11" class="flex-1 bg-gray-200 rounded-theme-lg aspect-video flex items-center justify-center text-text-muted overflow-hidden">
+            <span class="material-symbols-outlined text-6xl opacity-20">image</span>
+        </div>
+    </section>
+
+    <hr data-control-id="20" class="border-border my-4">
+
+    <!-- Stats Section -->
+    <section class="max-w-5xl mx-auto px-4 py-6 grid grid-cols-3 gap-4 text-center">
+        <div data-control-id="22" class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-3xl">surgical</span>
+            <span class="text-sm font-medium">+XX cirugías</span>
+        </div>
+        <div data-control-id="23" class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+            <span class="text-sm font-medium">+30 años de experiencia</span>
+        </div>
+        <div data-control-id="24" class="flex flex-col items-center gap-1">
+            <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+            <span class="text-sm font-medium">XX socios hospitalarios y SGMM</span>
+        </div>
+    </section>
+
+    <hr data-control-id="25" class="border-border my-4">
+
+    <!-- Services Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8">
+        <h2 data-control-id="33" class="text-3xl font-bold mb-6">Nuestros servicios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Service Card 1 -->
+            <div data-control-id="27" class="bg-surface p-6 rounded-theme-lg shadow-theme border border-border flex flex-col justify-between hover:border-primary transition-colors group">
+                <div>
+                    <h3 data-control-id="29" class="text-xl font-bold mb-1">Cirugía X</h3>
+                    <p data-control-id="28" class="text-primary text-sm font-medium mb-3">Especialistas</p>
+                    <p data-control-id="30" class="text-text-muted text-sm">Alta especialidad y diferentes patologías como xxxx,xxxxx,xxxxx</p>
+                </div>
+                <button data-control-id="34" class="mt-4 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
+            <!-- Service Card 2 -->
+            <div data-control-id="36" class="bg-surface p-6 rounded-theme-lg shadow-theme border border-border flex flex-col justify-between hover:border-primary transition-colors group">
+                <div>
+                    <h3 data-control-id="38" class="text-xl font-bold mb-1">Cirugía X</h3>
+                    <p data-control-id="37" class="text-primary text-sm font-medium mb-3">Especialistas</p>
+                    <p data-control-id="39" class="text-text-muted text-sm">Alta especialidad y diferentes patologías como xxxx,xxxxx,xxxxx</p>
+                </div>
+                <button data-control-id="40" class="mt-4 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
+            <!-- Service Card 3 -->
+            <div data-control-id="41" class="bg-surface p-6 rounded-theme-lg shadow-theme border border-border flex flex-col justify-between hover:border-primary transition-colors group">
+                <div>
+                    <h3 data-control-id="43" class="text-xl font-bold mb-1">Cirugía X</h3>
+                    <p data-control-id="42" class="text-primary text-sm font-medium mb-3">Especialistas</p>
+                    <p data-control-id="44" class="text-text-muted text-sm">Alta especialidad y diferentes patologías como xxxx,xxxxx,xxxxx</p>
+                </div>
+                <button data-control-id="45" class="mt-4 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
+            <!-- Service Card 4 -->
+            <div data-control-id="46" class="bg-surface p-6 rounded-theme-lg shadow-theme border border-border flex flex-col justify-between hover:border-primary transition-colors group">
+                <div>
+                    <h3 data-control-id="48" class="text-xl font-bold mb-1">Cirugía X</h3>
+                    <p data-control-id="47" class="text-primary text-sm font-medium mb-3">Especialistas</p>
+                    <p data-control-id="49" class="text-text-muted text-sm">Alta especialidad y diferentes patologías como xxxx,xxxxx,xxxxx</p>
+                </div>
+                <button data-control-id="50" class="mt-4 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <hr data-control-id="51" class="border-border my-4">
+
+    <!-- Doctor Profile Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center gap-8">
+        <div data-control-id="52" class="w-full md:w-1/3 bg-gray-200 rounded-theme-lg aspect-square flex items-center justify-center overflow-hidden">
+            <span class="material-symbols-outlined text-8xl opacity-20">person</span>
+        </div>
+        <div class="flex-1 space-y-4">
+            <h2 data-control-id="53" class="text-3xl font-bold">Dr. Joel Sánchez García</h2>
+            <p data-control-id="54" class="text-primary text-xl">Ortopedia y traumatología</p>
+            <button data-control-id="56" class="bg-primary text-white px-6 py-2 rounded-theme shadow-theme hover:opacity-90 transition-all">
+                Más información
+            </button>
+        </div>
+    </section>
+
+    <!-- Recovery Path Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 data-control-id="63" class="text-3xl font-bold text-center mb-12">Un camino claro hasta la recuperación</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div data-control-id="65" class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold shadow-theme">1</div>
+                    <p data-control-id="71" class="font-medium">Consulta</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div data-control-id="67" class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold shadow-theme">2</div>
+                    <p data-control-id="72" class="font-medium">Plan personalizado</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div data-control-id="68" class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold shadow-theme">3</div>
+                    <p data-control-id="75" class="font-medium">Tratamiento</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4">
+                    <div data-control-id="69" class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold shadow-theme">4</div>
+                    <p data-control-id="74" class="font-medium">Seguimiento y recuperación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr data-control-id="57" class="border-border my-4">
+
+    <!-- Locations Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8">
+        <h2 data-control-id="88" class="text-3xl font-bold mb-8">¿Donde podemos atenderte?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Location 1 -->
+            <div class="flex flex-col rounded-theme-lg overflow-hidden shadow-theme border border-border">
+                <div data-control-id="81" class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-5xl opacity-20">location_on</span>
+                </div>
+                <div data-control-id="78" class="p-6 bg-surface flex-1 relative">
+                    <h3 data-control-id="80" class="text-xl font-bold mb-1">Hospital Angeles</h3>
+                    <p data-control-id="79" class="text-text-muted text-sm mb-4">CDMX</p>
+                    <p data-control-id="82" class="text-sm leading-relaxed">Consulta y cirugía xxxxxxxxxx<br>SGMM</p>
+                    <button data-control-id="89" class="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Location 2 -->
+            <div class="flex flex-col rounded-theme-lg overflow-hidden shadow-theme border border-border">
+                <div data-control-id="86" class="h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-5xl opacity-20">location_on</span>
+                </div>
+                <div data-control-id="83" class="p-6 bg-surface flex-1 relative">
+                    <h3 data-control-id="85" class="text-xl font-bold mb-1">Hospital XXXXXX</h3>
+                    <p data-control-id="84" class="text-text-muted text-sm mb-4">CDMX</p>
+                    <p data-control-id="87" class="text-sm leading-relaxed">Consulta y cirugía xxxxxxxxxx<br>SGMM</p>
+                    <button data-control-id="90" class="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr data-control-id="91" class="border-border my-4">
+
+    <!-- Testimonials Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8">
+        <h2 data-control-id="92" class="text-3xl font-bold mb-8">Nuestros pacientes</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Testimonial 1 -->
+            <div data-control-id="93" class="bg-surface p-4 rounded-theme shadow-theme border border-border">
+                <div class="flex gap-0.5 mb-3">
+                    <span data-control-id="97" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="102" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="103" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="104" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="101" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                </div>
+                <div class="h-20 bg-gray-50 rounded-theme-sm"></div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div data-control-id="94" class="bg-surface p-4 rounded-theme shadow-theme border border-border">
+                <div class="flex gap-0.5 mb-3">
+                    <span data-control-id="106" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="108" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="109" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="110" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="107" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                </div>
+                <div class="h-20 bg-gray-50 rounded-theme-sm"></div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div data-control-id="95" class="bg-surface p-4 rounded-theme shadow-theme border border-border">
+                <div class="flex gap-0.5 mb-3">
+                    <span data-control-id="112" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="114" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="115" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="116" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="113" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                </div>
+                <div class="h-20 bg-gray-50 rounded-theme-sm"></div>
+            </div>
+            <!-- Testimonial 4 -->
+            <div data-control-id="96" class="bg-surface p-4 rounded-theme shadow-theme border border-border">
+                <div class="flex gap-0.5 mb-3">
+                    <span data-control-id="118" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="120" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="121" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="122" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                    <span data-control-id="119" class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                </div>
+                <div class="h-20 bg-gray-50 rounded-theme-sm"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">
+        <div class="w-full md:w-1/3">
+            <h2 data-control-id="125" class="text-4xl font-bold">FAQ's</h2>
+        </div>
+        <div class="flex-1 space-y-3" x-data="{ openFaq: null }">
+            <div class="border border-border rounded-theme overflow-hidden">
+                <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-4 py-3 flex justify-between items-center bg-surface hover:bg-gray-50 transition-colors">
+                    <span data-control-id="126" class="font-medium">¿Cómo puedo agendar?</span>
+                    <span class="material-symbols-outlined transition-transform" :class="openFaq === 1 && 'rotate-180'">expand_content</span>
+                </button>
+                <div x-show="openFaq === 1" x-collapse class="px-4 py-3 text-text-muted text-sm border-t border-border">
+                    Puedes agendar a través de nuestro portal o llamando directamente a nuestras oficinas.
+                </div>
+            </div>
+            <div class="border border-border rounded-theme overflow-hidden">
+                <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-4 py-3 flex justify-between items-center bg-surface hover:bg-gray-50 transition-colors">
+                    <span data-control-id="127" class="font-medium">¿En qué hospitales tiene operaciones?</span>
+                    <span class="material-symbols-outlined transition-transform" :class="openFaq === 2 && 'rotate-180'">expand_content</span>
+                </button>
+                <div x-show="openFaq === 2" x-collapse class="px-4 py-3 text-text-muted text-sm border-t border-border">
+                    Operamos en los principales hospitales de la CDMX, incluyendo Hospital Angeles.
+                </div>
+            </div>
+            <div class="border border-border rounded-theme overflow-hidden">
+                <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-4 py-3 flex justify-between items-center bg-surface hover:bg-gray-50 transition-colors">
+                    <span data-control-id="128" class="font-medium">¿Puedo tener una cita de segunda opinión?</span>
+                    <span class="material-symbols-outlined transition-transform" :class="openFaq === 3 && 'rotate-180'">expand_content</span>
+                </button>
+                <div x-show="openFaq === 3" x-collapse class="px-4 py-3 text-text-muted text-sm border-t border-border">
+                    Sí, ofrecemos consultas especializadas para segundas opiniones médicas.
+                </div>
+            </div>
+            <div class="border border-border rounded-theme overflow-hidden">
+                <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-4 py-3 flex justify-between items-center bg-surface hover:bg-gray-50 transition-colors">
+                    <span data-control-id="131" class="font-medium">¿Debo llevar algún documento antes de mi consulta?</span>
+                    <span class="material-symbols-outlined transition-transform" :class="openFaq === 4 && 'rotate-180'">expand_content</span>
+                </button>
+                <div x-show="openFaq === 4" x-collapse class="px-4 py-3 text-text-muted text-sm border-t border-border">
+                    Es recomendable traer estudios previos, radiografías y tu identificación oficial.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr data-control-id="129" class="border-border my-4">
+
+    <!-- Call to Action Section -->
+    <section class="max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-12 items-start">
+        <div class="flex-1 space-y-6">
+            <h2 data-control-id="130" class="text-3xl font-bold leading-tight">Hacemos que el próximo paso sea sencillo</h2>
+            <p data-control-id="132" class="text-text-muted leading-relaxed">
+                Nuestro equipo atenderá tus dudas, te orientará con la documentación necesaria y te ayudará a estar listo para tu primera visita
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button data-control-id="133" @click="page = 'appointment'" class="bg-primary text-white px-8 py-3 rounded-theme shadow-theme hover:opacity-90 transition-all font-medium">
+                    Agendar cita
+                </button>
+                <button data-control-id="134" class="border border-border px-8 py-3 rounded-theme flex items-center gap-2 hover:bg-gray-50 transition-colors font-medium">
+                    <span data-control-id="135" class="material-symbols-outlined text-sm">phone_in_talk</span>
+                    5555-5555
+                </button>
+            </div>
+        </div>
+        <div data-control-id="136" class="w-full md:w-80 bg-surface p-6 rounded-theme-lg shadow-theme border border-border space-y-4">
+            <h3 data-control-id="138" class="text-lg font-bold">Orientación primera cita</h3>
+            <p data-control-id="139" class="text-text-muted text-sm leading-relaxed">
+                Greyhound divisively hello coldly wonderfully marginally far upon excluding.
+            </p>
+            <a data-control-id="142" class="text-primary font-medium text-sm hover:underline block">Portal del paciente</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-control-id="143" class="bg-surface border-t border-border py-12 mt-12">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div class="space-y-4">
+                <h2 data-control-id="144" class="text-2xl font-bold">Cirugía especial</h2>
+                <div class="h-20 w-64 bg-gray-50 rounded-theme-sm"></div>
+            </div>
+            <div class="flex gap-6">
+                <a data-control-id="146" class="text-text-muted hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">play_arrow</span>
+                </a>
+                <a data-control-id="147" class="text-text-muted hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">photo_camera</span>
+                </a>
+                <a data-control-id="148" class="text-text-muted hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">group</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Placeholder Pages for Navigation -->
+<div x-show="page === 'portal'" x-cloak class="min-h-screen flex flex-col items-center justify-center p-8 text-center">
+    <h1 class="text-3xl font-bold mb-4">Portal del Paciente</h1>
+    <p class="text-text-muted mb-8">Bienvenido a su área privada.</p>
+    <button @click="page = 'main'" class="bg-primary text-white px-6 py-2 rounded-theme">Volver al inicio</button>
+</div>
+
+<div x-show="page === 'appointment'" x-cloak class="min-h-screen flex flex-col items-center justify-center p-8 text-center">
+    <h1 class="text-3xl font-bold mb-4">Agendar Cita</h1>
+    <p class="text-text-muted mb-8">Seleccione una fecha y hora para su consulta.</p>
+    <button @click="page = 'main'" class="bg-primary text-white px-6 py-2 rounded-theme">Volver al inicio</button>
+</div>
+
+</body>
+</html>
